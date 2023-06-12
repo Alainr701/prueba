@@ -1,0 +1,13 @@
+{
+    "name": "utic/excel",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Utic\\Excel\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.28"
+    }
+}

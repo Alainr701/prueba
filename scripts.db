@@ -1,0 +1,76 @@
+CREATE TABLE estudiantes (
+  id_estudiante INT(11) NOT NULL AUTO_INCREMENT,
+  apellido_materno VARCHAR(50) NOT NULL,
+  apellido_paterno VARCHAR(50) NOT NULL,
+  nombres VARCHAR(100) NOT NULL,
+  ci VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id_estudiante)
+);
+CREATE TABLE docentes (
+  id_docente INT PRIMARY KEY AUTO_INCREMENT,
+  nombres VARCHAR(255) NOT NULL,
+  apellidos VARCHAR(255) NOT NULL,
+  correo_electronico VARCHAR(255) NOT NULL,
+  usuario VARCHAR(255) NOT NULL,
+  contrasena VARCHAR(255) NOT NULL
+);
+CREATE TABLE materia (
+  id_materia INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  id_docente INT(11) NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
+  FOREIGN KEY (id_docente) REFERENCES docentes(id_docente)
+);
+
+
+
+
+CREATE TABLE asistencia (
+  id_asistencia INT(11) NOT NULL AUTO_INCREMENT,
+  id_estudiante INT(11) NOT NULL,
+  fecha DATETIME NOT NULL,
+  asistio  VARCHAR(10) NOT NULL,
+  id_materia INT(11) NOT NULL,
+  tema VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id_asistencia),
+  FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id_estudiante),
+  FOREIGN KEY (id_materia) REFERENCES materia(id_materia)
+);
+
+///ejemplos
+-- Llenar la tabla estudiantes
+INSERT INTO estudiantes (apellido_materno, apellido_paterno, nombres, ci)
+VALUES
+  ('Pérez', 'Gómez', 'Juan', '12345678'),
+  ('López', 'Hernández', 'María', '87654321'),
+  ('García', 'Rodríguez', 'Pedro', '56789012'),
+  ('Martínez', 'Sánchez', 'Ana', '21098765');
+
+-- Llenar la tabla docentes
+INSERT INTO docentes (nombres, apellidos, correo_electronico, usuario, contrasena)
+VALUES
+  ('Carlos', 'Sánchez', 'csanchez@example.com', 'csanchez', 'contrasena1'),
+  ('María', 'Gómez', 'mgomez@example.com', 'mgomez', 'contrasena2');
+
+-- Llenar la tabla materia
+INSERT INTO materia (id_docente, nombre)
+VALUES
+  (1, 'Matemáticas'),
+  (2, 'Historia');
+
+-- Llenar la tabla asistencia
+INSERT INTO asistencia (id_estudiante, fecha, asistio, id_materia, tema)
+VALUES
+  (1, '2023-06-01 10:00:00', 'Sí', 1, 'Álgebra'),
+  (2, '2023-06-01 10:00:00', 'No', 1, 'Álgebra'),
+  (3, '2023-06-01 10:00:00', 'Sí', 2, 'Revolución Mexicana'),
+  (4, '2023-06-01 10:00:00', 'Sí', 2, 'Revolución Mexicana');
+
+  https://getcomposer.org/download/
+
+  CREATE TABLE docente_materia (
+  id_docente_materia INT AUTO_INCREMENT PRIMARY KEY,
+  id_docente INT,
+  id_materia INT,
+  FOREIGN KEY (id_docente) REFERENCES docentes(id_docente),
+  FOREIGN KEY (id_materia) REFERENCES materia(id_materia)
+);
