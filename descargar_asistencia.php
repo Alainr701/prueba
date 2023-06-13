@@ -1,6 +1,6 @@
 <?php
-require_once 'servicios/db.php';
-require_once 'src/generar-excel.php';
+require 'servicios/db.php';
+require 'src/generar-excel.php';
 //materia / id_docente 
 if (isset($_GET['fecha']) && isset($_GET['materia']) && isset($_GET['id_docente'])) {
     $fecha = $_GET['fecha'];
@@ -76,12 +76,12 @@ if (isset($_GET['fecha']) && isset($_GET['materia']) && isset($_GET['id_docente'
     // Imprimir el arreglo de datos
     foreach ($data as $row) {
         echo "[" . implode(", ", $row) . "]<br>";
-    }
+    } 
     //PONER $data dentro de un array
-     
-    $data2 = [
-        [1,"asdasd",123],
+     echo "data: <br>";
+    $data = [
+        [2,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
         [2,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
     ];
-    crear_excel($data2);
+    crear_excel($data);
 }

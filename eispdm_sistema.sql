@@ -260,7 +260,7 @@ $(function() {
       </div>
       <div id="pma_navigation_tree" class="list_container synced highlight autoexpand">
 
-  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=estudiantes">`eispdm_sistema`.`estudiantes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=docente_materia">`eispdm_sistema`.`docente_materia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=materia">`eispdm_sistema`.`materia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=docentes">`eispdm_sistema`.`docentes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=asistencia">`eispdm_sistema`.`asistencia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=docentes">`sistema`.`docentes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=materia">`sistema`.`materia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=estudiantes">`sistema`.`estudiantes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=asistencia">`sistema`.`asistencia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=docente">`sistema`.`docente`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
+  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=materia">`eispdm_sistema`.`materia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=estudiantes">`eispdm_sistema`.`estudiantes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=docente_materia">`eispdm_sistema`.`docente_materia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=docentes">`eispdm_sistema`.`docentes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=eispdm_sistema&table=asistencia">`eispdm_sistema`.`asistencia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=docentes">`sistema`.`docentes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=materia">`sistema`.`materia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=estudiantes">`sistema`.`estudiantes`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=asistencia">`sistema`.`asistencia`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=sistema&table=docente">`sistema`.`docente`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
 
 <div class="clearfloat"></div>
 
@@ -562,386 +562,6 @@ $.extend(defaultValues, {
                         Press Enter to execute query                    </span>
                 </div>
                                                             <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="docente_materia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `docente_materia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="docentes">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `eispdm_sistema`.`docentes` WHERE `id_docente` = 18</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="docente_materia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `docente_materia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="asistencia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `asistencia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="asistencia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `asistencia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="docente_materia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `docente_materia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="asistencia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `asistencia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="asistencia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `asistencia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="materia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `materia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="eispdm_sistema" targettable="asistencia">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>eispdm_sistema</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `asistencia`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
                             targetdb="eispdm_sistema" targettable="materia">
                             <div class="action_content">
                     <span class="action collapse">
@@ -1510,6 +1130,386 @@ $.extend(defaultValues, {
                     </span>
             </div>
                             <span class="query">SELECT * FROM `estudiantes`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `materia`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `materia`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `materia`</span>
+                        </div>
+                                            <div class="message history collapsed hide"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">INSERT INTO `materia` (`id_materia`, `nombre`) VALUES (NULL, &#039;MEDIDAS Y CIRCUITOS ELECTRÓNICOS (MCE-100)&#039;), (NULL, &#039;SISTEMAS OPERATIVOS Y TECNOLOGÍA DE LA INFORMACIÓN (STI-100)&#039;);</span>
+                        </div>
+                                            <div class="message history collapsed hide"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">INSERT INTO `materia` (`id_materia`, `nombre`) VALUES (NULL, &#039;PROGRAMACIÓN I (PRG-100)&#039;), (NULL, &#039;ÁLGEBRA LINEAL (ALG-100)&#039;);</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `materia`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `materia`</span>
+                        </div>
+                                            <div class="message history collapsed hide"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">INSERT INTO `materia` (`id_materia`, `nombre`) VALUES (NULL, &#039;INGLÉS TÉCNICO II (INT-200)&#039;), (NULL, &#039;CÁLCULO APLICADO (CAL-200)&#039;), (NULL, &#039;ELECTRÓNICA GENERAL Y LABORATORIO I (EGL-200)&#039;), (NULL, &#039;INFORMÁTICA Y LABORATORIO II (IYL-200)&#039;), (NULL, &#039;SISTEMAS DIGITALES Y LABORATORIO (SDL-200)&#039;), (NULL, &#039;INFORMÁTICA Y LABORATORIO II (IYL-200)&#039;);</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `materia`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="eispdm_sistema" targettable="materia">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>eispdm_sistema</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `materia`</span>
                         </div>
                                                 </div><!-- console_message_container -->
             <div class="query_input">
