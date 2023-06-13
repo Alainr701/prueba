@@ -4,9 +4,9 @@ require_once 'servicios/db.php';
 // Verificar la cookie de inicio de sesión
 if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
   header('Location: login.php');  // Redirigir al usuario a la página de inicio de sesión
-
   exit();
 }
+$idDocente = $_SESSION['id_docente'];
 ?>
 
 
@@ -68,7 +68,7 @@ if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
     <div class="app-sidebar__user">
       <div>
         <p class="app-sidebar__user-name">Nombre</p>
-        <p class="app-sidebar__user-designation">Curso</p>
+        <p class="app-sidebar__user-designation">Curso<?=$idDocente?></p>
       </div>
     </div>
 
@@ -79,7 +79,6 @@ if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
           <ul class="treeview-menu">
 
             <?php
-            $idDocente = 14; // Supongamos que el ID del docente es 1, debes reemplazarlo con el ID correcto
 
             // Consultar las materias del docente
             $query = "SELECT m.id_materia, m.nombre FROM materia AS m INNER JOIN docente_materia AS dm ON m.id_materia = dm.id_materia WHERE dm.id_docente = $idDocente";

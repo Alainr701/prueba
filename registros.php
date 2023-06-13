@@ -7,6 +7,7 @@ if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
     header('Location: login.php');  // Redirigir al usuario a la página de inicio de sesión
     exit();
 }
+$idDocente = $_SESSION['id_docente'];
 ?>
 
 <!DOCTYPE html>
@@ -66,35 +67,10 @@ if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
         </div>
         <ul class="app-menu">
 
-            <li class="treeview"><a class="app-menu__item" href="index.php" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Asistencia</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-                <form method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                    <ul class="treeview-menu">
-
-                        <?php
-                        $idDocente = 14; // Supongamos que el ID del docente es 1, debes reemplazarlo con el ID correcto
-
-                        // Consultar las materias del docente
-                        $query = "SELECT m.id_materia, m.nombre FROM materia AS m INNER JOIN docente_materia AS dm ON m.id_materia = dm.id_materia WHERE dm.id_docente = $idDocente";
-                        $result = $conn->query($query);
-
-                        // Verificar si se encontraron materias
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                $id_materia = $row["id_materia"];
-                                $materia = $row["nombre"];
-                                echo '<li><button type="submit" class="treeview-item bg-dark w-100" name="id_materia" value="' . $id_materia . '"><i class="icon fa fa-circle-o"></i>' . $materia . '</button></li>';
-                            }
-                        } else {
-                            echo '<li>No se encontraron materias para el docente seleccionado.</li>';
-                        }
-                        ?>
-
-                    </ul>
-                </form>
-
-            </li>
 
 
+
+            <li><a class="app-menu__item" href="index.php"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Asistencia</span></a></li>
             <li><a class="app-menu__item" href="registros.php"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Registros</span></a></li>
 
         </ul>
@@ -127,9 +103,10 @@ if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
             <?php
             // Consultar todas las fechas de asistencia y la materia correspondiente
             $query = "SELECT a.fecha, m.nombre AS materia
-            FROM asistencia a
-            INNER JOIN materia m ON a.id_materia = m.id_materia
-            GROUP BY a.fecha, m.nombre";
+FROM asistencia a
+INNER JOIN materia m ON a.id_materia = m.id_materia
+WHERE a.id_docente = " . $idDocente . "
+GROUP BY a.fecha, m.nombre";
             $result = $conn->query($query);
 
             if ($result->num_rows > 0) {
@@ -152,7 +129,7 @@ if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
                     echo '<td>' . $fecha . '</td>';
                     echo '<td>' . $materia . '</td>';
                     echo '<td>';
-                    echo '<a href="descargar_asistencia.php?fecha=' . $fecha . '" class="btn btn-primary">Descargar Asistencia</a>';
+                    echo '<a href="descargar_asistencia.php?fecha=' . $fecha . '&materia=' . $materia . '&id_docente=' . $idDocente . '" class="btn btn-primary btn-sm">Descargar</a>';
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -162,9 +139,9 @@ if (!isset($_COOKIE['logged_in']) || !$_COOKIE['logged_in']) {
             } else {
                 echo 'No se encontraron fechas de asistencia.';
             }
-
-
             ?>
+
+
         </div>
 
         </div>
