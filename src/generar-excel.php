@@ -1,5 +1,6 @@
 <?php
 require 'vendor/autoload.php';
+// require '../servicios/db.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
@@ -263,36 +264,51 @@ function crear_excel($datos_estudiantes){
     $writer->save('php://output');
 }
 $data=[];
-if (isset( $_POST['codigo'])) {
-    //Consultar a la base de datos------------------
-        //Datos de muetra
-    $data = [
-        [1,"PEREZ PEREZ JUAN","12sdsdsd345"," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-        [2,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-        [3,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-        [4,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-        [5,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-        [6,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",43," ","REPROBADO"],
-    ];
-    crear_excel($data);
-}else{
-    if ( isset( $_GET['codigo'])) {
-        //Consultar a la base de datos------------------
-        //Datos de muetra
-        $data = [
-            [1,"asdasd",123],
-            [2,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-            [3,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-            [4,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-            [5,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
-            [6,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",43," ","REPROBADO"],
-        ];
-        crear_excel($data);
+// if (isset( $_POST['codigo'])) {
+//     //Consultar a la base de datos------------------
+//         //Datos de muetra
+//     $data = [
+//         [1,"PEREZ PEREZ JUAN","12sdsdsd345"," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         [2,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         [3,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         [4,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         [5,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         [6,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",43," ","REPROBADO"],
+//     ];
+//     crear_excel($data);
+// }else{
+//     if ( isset( $_GET['data'])) {
+//         //Consultar a la base de datos------------------
+//         //Datos de muetra
+//         $id_estudiante = 1;
+//         $apellido_paterno = "PEREZ";
+//         $apellido_materno = "PEREZ";
+//         $nombres = "JUAN";
+//         $ci = "12345";
+//         $asistencia_valor = "A";
+//         $data[] = array(
+//             $id_estudiante,
+//             $apellido_materno . " " . $apellido_paterno . " " . $nombres,
+//             $ci,
+//             " ",
+//             // $id_asistencia,
+//             // $id_materia,
+//             // $fecha,
+//             $asistencia_valor
+//         );
+//         // $data = [
+//         //     [1,"asdasd",123],
+//         //     [2,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         //     [3,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         //     [4,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         //     [5,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+//         //     [6,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",43," ","REPROBADO"],
+//         // ];
+//         crear_excel($data);
         
-    }else {
-        echo "no existe código";
-    }
-    
-}
+//     }else {
+//         echo "no existe código";
+//     }
+// }
 
 ?>

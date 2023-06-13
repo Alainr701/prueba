@@ -26,7 +26,7 @@ $idDocente = $_SESSION['id_docente'];
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <title>Home</title>
+    <title>Sistem INF</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,9 +49,8 @@ $idDocente = $_SESSION['id_docente'];
             <!-- User Menu-->
             <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                    <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                    <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                    <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+
+                    <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Salir</a></li>
                 </ul>
             </li>
         </ul>
@@ -60,10 +59,17 @@ $idDocente = $_SESSION['id_docente'];
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
         <div class="app-sidebar__user">
-            <div>
-                <p class="app-sidebar__user-name">Nombre</p>
-                <p class="app-sidebar__user-designation">Curso</p>
-            </div>
+            <p class="app-sidebar__user-name">Nombre :
+                <?php
+                // Consultar el nombre del docente
+                $query = "SELECT nombres FROM docentes WHERE id_docente = $idDocente";
+                $result = $conn->query($query);
+                echo $result->fetch_assoc()['nombres'];
+                ?>
+
+            </p>
+
+        </div>
         </div>
         <ul class="app-menu">
 
@@ -86,16 +92,7 @@ $idDocente = $_SESSION['id_docente'];
                 <li class="breadcrumb-item"><a href="#">Carreras</a></li>
             </ul>
         </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
-                    <div class="info">
-                        <h4>Numero de Estudiantes</h4>
-                        <p><b>5</b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="tile">
             <h3 class="tile-title">Registro de Estudiantes</h3>
 
