@@ -1,5 +1,6 @@
 <?php
 require_once 'servicios/db.php';
+require_once 'src/generar-excel.php';
 //materia / id_docente 
 if (isset($_GET['fecha']) && isset($_GET['materia']) && isset($_GET['id_docente'])) {
     $fecha = $_GET['fecha'];
@@ -41,21 +42,46 @@ if (isset($_GET['fecha']) && isset($_GET['materia']) && isset($_GET['id_docente'
     echo "Longitud del array de asistencias: " . count($asistencias) . "<br>";
     echo "asistencias: <br>";
     // Imprimir el array de asistencias
+    $data = array();
+
     foreach ($asistencias as $asistencia) {
         $id_asistencia = $asistencia['id_asistencia'];
         $id_estudiante = $asistencia['id_estudiante'];
         $id_materia = $asistencia['id_materia'];
         $fecha = $asistencia['fecha'];
-        $asistencia_valor = $asistencia['asistencia']; // Cambio de nombre
+        $asistencia_valor = $asistencia['asistencia'];
         $id_docente = $asistencia['id_docente'];
-
-        // Hacer lo que necesites con los datos de la asistencia
-        echo "ID Asistencia: " . $id_asistencia . "<br>";
-        echo "ID Estudiante: " . $id_estudiante . "<br>";
-        echo "ID Materia: " . $id_materia . "<br>";
-        echo "Fecha: " . $fecha . "<br>";
-        echo "Asistencia: " . $asistencia_valor . "<br>"; // Uso del nuevo nombre
-        echo "ID Docente: " . $id_docente . "<br>";
-        echo "<br>";
+    
+        // Obtener datos del estudiante
+        $query = "SELECT apellido_paterno, apellido_materno, nombres, ci FROM estudiantes WHERE id_estudiante = '$id_estudiante'";
+        $result = $conn->query($query);
+        $row = $result->fetch_assoc();
+        $apellido_paterno = $row['apellido_paterno'];
+        $apellido_materno = $row['apellido_materno'];
+        $nombres = $row['nombres'];
+        $ci = $row['ci'];
+    
+        // Construir el arreglo de datos
+        $data[] = array(
+            $id_estudiante,
+            $apellido_materno." ".$apellido_paterno." ".$nombres,
+            $ci,
+            " ",
+            // $id_asistencia,
+            // $id_materia,
+            // $fecha,
+            $asistencia_valor
+        );
     }
+    // Imprimir el arreglo de datos
+    foreach ($data as $row) {
+        echo "[" . implode(", ", $row) . "]<br>";
+    }
+    //PONER $data dentro de un array
+     
+    $data2 = [
+        [1,"asdasd",123],
+        [2,"PEREZ PEREZ JUAN",12345," ","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","5","10","11","21"," ",2,2,3,3,2,3,4,3,4,5,3,2,4,39,65,"#",75," ","APROBADO"],
+    ];
+    crear_excel($data2);
 }
